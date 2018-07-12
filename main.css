@@ -1,0 +1,15 @@
+body{
+    display: block;
+    background-position: center;
+
+}
+
+.container {
+    background-color: #97de95;
+    background-position: center;
+    align-content: center;
+    
+}
+form{
+    align-content: center;
+}
