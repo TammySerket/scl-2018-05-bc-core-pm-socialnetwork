@@ -4,7 +4,7 @@ body{
 
 }
 
-.container {
+.container{
     background-color: #97de95;
     background-position: center;
     align-content: center;
@@ -12,4 +12,6 @@ body{
 }
 form{
     align-content: center;
+    align-items: center;
+    text-align: center;
 }
