@@ -1,22 +1,23 @@
 body {
-	background: #e9ebee;
+	background: #cfc9c9;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
 
 a {color: #5f3955;}
 a:hover {text-decoration: underline;
+		color: #c8c81f
 }
 
 /* --- --- HEADER --- --- */
 header {
-	background: #90b081;
+	background: #7a4741;
 	padding: 10px 0;
 }
 
 /* LOGO */
 header .logo img {
-	height: 22px;
+	height: 32px;
 }
 
 /* BUSCAR */
@@ -47,7 +48,7 @@ header .buscar form button {
 }
 
 header .buscar form button:hover {
-	background: #099efc;
+	background: #c8c81f;
 	color: #fff;
 }
 
@@ -99,7 +100,7 @@ main .barra-lateral-izquierda nav a {
 }
 
 main .barra-lateral-izquierda nav a:hover {
-	background: #f2f2f2;
+	background: #c8c81f65;
 	text-decoration: none;
 }
 
@@ -159,18 +160,18 @@ main .contenido-principal .publicar form .contenedor-botones a:hover {
 }
 
 main .contenido-principal .publicar form button {
-	border: 1px solid #394914;
+	border: 1px solid #c68745;
 	padding: 5px 30px;
 	font-size: 14px;
 	font-family: 'Roboto', sans-serif;
-	background: linear-gradient(to bottom, #8ab22e 0%, #526847 100%);
+	background: linear-gradient(to bottom, #c68745 0%, #906332 100%);
 	color: #fff;
 	border-radius: 3px;
 	cursor: pointer;
 }
 
 main .contenido-principal .publicar form button:hover {
-	background: linear-gradient(to bottom, #669050 0%, #64b485 100%);
+	background: linear-gradient(to bottom, #c68745 0%, #ad6f3d 100%);
 }
 
 /* --- PUBLICACIONES --- */
@@ -226,7 +227,7 @@ main .publicacion .caja-botones {
 }
 
 main .publicacion .post .caja-botones button {
-	background: #8ab22e;
+	background:  #906332;
 	color: #fff;
 	cursor: pointer;
 	padding: 10px 20px;
@@ -234,16 +235,16 @@ main .publicacion .post .caja-botones button {
 	font-size: 18px;
 	line-height: 18px;
 	border-radius: 4px;
-	border:none;
+	border: 1px solid #c68745
 }
 
 main .publicacion .post .caja-botones button:hover {
-	background: #669050;
+	background: #c8c81f 0%, #7e7e10e3 100%s ;
 }
 
 main .publicacion .post .caja-botones p {
 	margin-bottom: 0;
-	color: #0d5c0d;
+	color: #462b1ee7;
 }
 
 /* --- COMENTARIOS --- */
@@ -327,10 +328,10 @@ main footer .copyright {
 @media screen and (max-width: 767px) {
 	main .btn-menu {
 		display: block;
-		border: 1px solid #360d20;
+		border: 1px solid #5f444f;
 		padding: 5px 10px;
 		font-size: 14px;
-		background: linear-gradient(to bottom, #c79c57 0%, #c08526 100%);
+		background: linear-gradient(to bottom, #c68745 0%, #906332 100%);
 		color: #fff;
 		border-radius: 3px;
 		cursor: pointer;
@@ -339,7 +340,7 @@ main footer .copyright {
 	}
 
 	main .btn-menu:hover {
-		background: #c79c57;
+		background: #a58576;
 		text-decoration: none;
 	}
 
