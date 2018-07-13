@@ -12,6 +12,5 @@ body{
 }
 form{
     align-content: center;
-    align-items: center;
-    text-align: center;
+    /*transform: translate(23em);*/
 }
