@@ -1,5 +1,5 @@
 body {
-	background: #cfc9c9;
+	background: #E6EEE3;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
@@ -11,7 +11,7 @@ a:hover {text-decoration: underline;
 
 /* --- --- HEADER --- --- */
 header {
-	background: #7a4741;
+	background: #90B081;
 	padding: 10px 0;
 }
 
@@ -181,7 +181,7 @@ main .publicacion {
 
 main .publicacion .foto {
 	padding-left: 15px;
-	margin-right: 15px; 
+	margin-right: 15px;
 }
 
 main .publicacion .foto a {

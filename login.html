@@ -11,14 +11,14 @@
 </head>
 <body>
   <!--Login dentro de dropdown menu-->
-<div class="container" style="text-align: center">
+<div id="fondo"class="container" style="text-align: center" >
   <img src="img/logo.png" alt="">
 <div class="dropdown-menu">
         <h6 class="dropdown-header">Dropdown header</h6>
         <a class="dropdown-item" href="#">Action</a>
         <a class="dropdown-item" href="#">Another action</a>
-      </div>  
-      
+      </div>
+
         <form class="col-lg-4 col-sm-8" style="align-content: center">
           <div class="form-group">
             <label for="exampleDropdownFormEmail1">Email address</label>
@@ -37,21 +37,21 @@
           <button id="login" type="submit" class="btn btn-primary">Sign in</button>
           <button id="loginWithFacebook" onclick="facebookLoginWithFirebase()" type="submit" class="btn btn-primary">Sign in With Facebook</button>
         </form>
-      
+
         <div class="dropdown-divider"></div>
         <div class="dropdown">
             <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true">
                 New around here? Sign up</button>
             <div class="dropdown-menu">
-        
+
         <a class="dropdown-item" href="#">Forgot password?</a>
 <!--Registro-->
-    
+
     <div id="signupbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-info">
           <div class="panel-heading">
               <div class="panel-title">Sign Up</div>
-              <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="">Sign In</a></div>  
+              <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="">Sign In</a></div>
           <div class="panel-body" >
               <form id="signupform" class="form-horizontal" role="form">
                   <div id="signupalert" style="display:none" class="alert alert-danger">
@@ -87,23 +87,23 @@
                       <div class="col-sm-12">
                           <input type="password" class="form-control" name="passwd" placeholder="Password">
                       </div>
-                  </div>                                                  
+                  </div>
                   <div class="form-group">
-                    <!-- Button -->                                        
+                    <!-- Button -->
                     <div class="col-md-offset-3 col-sm-12">
                         <button onclick="registerWithFirebase()" id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
-                        <span style="margin-left:8px;">or</span>  
+                        <span style="margin-left:8px;">or</span>
                     </div>
-                </div>                                        
+                </div>
                     <div style="border-top: 1px solid #ffffff; padding-top:20px"  class="form-group">
                         <div class="col-md-offset-3 col-sm-12">
                             <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
-                        </div>                                           
-                    </div>       
+                        </div>
+                    </div>
             </form>
         </div>
     </div>
-</div> 
+</div>
 </div>
 </div>
 </div>
@@ -125,7 +125,6 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src="js/login.js"></script> 
+<script src="js/login.js"></script>
 </body>
 </html>
-	
