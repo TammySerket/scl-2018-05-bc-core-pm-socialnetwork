@@ -1,15 +1,11 @@
 window.onload = ()=>{
-    firebase.auth().onAuthStateChanged((user)=>{
-       if(user){
-        login.style.display = "block"
-        logout.style.display = "none"
-        username.innerText = user.displayName;
-       }else{
-         /*login.style.display = "none";
-         logout.style.display = "block"*/
-       } 
-       console.log("user >"+JSON.stringify(user));
-    });
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+        } else {
+          // No user is signed in.
+        }
+      });
 }
 
 //Registro
@@ -18,7 +14,7 @@ function registerWithFirebase(){
     const emailValue = emailRegister.value;
     const passwordValue = passwordRegister.value;
 
-    firebase.auth().createUserWithEmailPassword(emailValue, passwordValue)
+    firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
       .then(()=>{
           console.log("Usuario creado")
       })
@@ -32,7 +28,7 @@ function loginWithFirebase(){
     const emailValue = email.value;
     const passwordValue = password.value;
 
-    firebase.auth().signWithEmailAndPassword(emailValue, passwordValue)
+    firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
       .then(()=>{
           console.log("Sesión Iniciada")
       })
