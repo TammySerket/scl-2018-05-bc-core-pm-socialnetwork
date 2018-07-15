@@ -6,6 +6,8 @@ function register(){
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(){
+        document.getElementById(email).value="";
+        document.getElementById(password).value="";
         verificando()
     })
     .catch(function(error) {
@@ -14,7 +16,7 @@ function register(){
     var errorMessage = error.message;
     // ...
     console.log(errorCode)
-    console.log(errorMessage)
+    alert(errorMessage)
     });
 
 }
@@ -68,15 +70,7 @@ observador();
 
 
 
-function signOut(){
-    firebase.auth().signOut()
-    .then(function (){
-        console.log('Cerrando Sesion...')
-    })
-    .catch(error=>{
-        console.log(error)
-    })
-}
+
 
 function verificando(){
     var user = firebase.auth().currentUser;
@@ -86,4 +80,57 @@ function verificando(){
     }).catch(function(error) {
         console.log(error)
 });
+}
+
+function signInWithGoogle(){
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+    .then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        // var token = result.credential.accessToken;
+        // // The signed-in user info.
+        // var user = result.user;
+        var provider = new firebase.auth.GoogleAuthProvider();
+        window.location.href = 'main.html';
+        console.log (result.user);
+        console.log('ya se ejecuto')
+        
+        // ...
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+        console.log (error)
+      });
+     
+
+}
+
+function signInWithFacebook(){
+    var provider = new firebase.auth.FacebookAuthProvider();
+    provider.addScope('public_profile');
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+        window.location.href = 'main.html';
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+
+
 }
