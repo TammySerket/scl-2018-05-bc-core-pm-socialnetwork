@@ -1,8 +1,5 @@
+
 body{
-  background-image: url("img/fondologin.jpg");
-  background-size:contain;
-  }
-  .container img{
-  width: 150px;
-  height: 150px;
-  }
+background-image: url("../img/fondologin.jpg");
+background-size:cover;
+}

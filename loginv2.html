@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+     <!-- conexion a Firebase -->
+     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+     <script>
+     // Initialize Firebase
+     var config = {
+         apiKey: "AIzaSyAWALtnmZiS_d4KhjIc79op-M8D4KDYNLo",
+         authDomain: "trabun-socialmedia.firebaseapp.com",
+         databaseURL: "https://trabun-socialmedia.firebaseio.com",
+         projectId: "trabun-socialmedia",
+         storageBucket: "trabun-socialmedia.appspot.com",
+         messagingSenderId: "85322774721"
+     };
+     firebase.initializeApp(config);
+     </script>
+
+</head>
+<body>
+
+   <div class="container" style="background-color: rgba(233, 129, 190, 0.507)">
+        <h4>Registrate</h4>
+        <input type="email"  id="email" placeholder="email@ejemplo.com">
+        <input type="password"  id="password"placeholder="Ingresa Password">
+        <button onclick="register()">Registrate</button>
+    <hr>
+           <h4>Ingresa</h4>
+            <input type="email"  id="email1" placeholder="email@ejemplo.com">
+            <input type="password"  id="password1"placeholder="Ingresa Password">
+    <hr>        
+            <button onclick="signIn()">Acceder</button>
+            <button onclick="signInWithGoogle()">Acceder con Google</button>
+            <button onclick="signInWithFacebook()">Acceder con Facebook</button>
+
+    </div>
+    <div id="contenido">
+
+    </div>
+    
+    
+  <script src="js/loginv2.js"></script>  
+</body>
+</html>

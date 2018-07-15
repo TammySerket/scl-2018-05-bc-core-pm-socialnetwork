@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //rescata elemento contenedor 
 const listaMensajes = document.getElementById("post")
 
@@ -29,4 +30,15 @@ function generarDom(mensaje){
   botonBorrar.setAttribute("class", "btn btn-dark");
 
   //
+=======
+function signOut(){
+    firebase.auth().signOut()
+    .then(function (){
+        console.log('Cerrando Sesion...')
+        window.location.href = 'loginv2.html';
+    })
+    .catch(error=>{
+        console.log(error)
+    })
+>>>>>>> 5c92414e5a1a8d28d1f800fcb3ced2c0f31ccea9
 }
