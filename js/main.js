@@ -56,7 +56,7 @@ function generarDom(mensaje){
 // añadir mensajes al documento
 function agregarComentario(){
      // leer el valor de textarea
-    const mensajes = document.getElementById("post").value;
+    const mensajes = document.getElementById("cajaComentarios").value;
     // crear elementos en el DOM
     generarDom(mensajes)
     // añadir a Local Storage
