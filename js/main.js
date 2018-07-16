@@ -10,84 +10,153 @@
     })
 }
 
-
 //rescata elemento contenedor 
-const listaMensajes = document.getElementById("post")
+const listaMensajes = document.getElementById("post");
+const listaComentarios = document.getElementById("comentarios");
 
 // Ejecución eventos
 eventListeners();
 
 function eventListeners(){
-    //cuando se envia el formilario
-    document.getElementById("comparte").addEventListener("click", agregarComentario);
-    //Borrar comnetarios
-    document.addEventListener("click", borrarComentario);
+    //Post
+    //cuando se envia el formulario
+    document.getElementById("comparte").addEventListener("click", agregarPublicacion);
+    //Borrar post
+    document.addEventListener("click", borrarPublicacion);
     // Contenido cargado
     document.addEventListener("DOMContentLoaded", localStorageListo);
+
+    //Comentarios
+    //Cuando se envían comentarios
+    document.getElementById("comenta").addEventListener("click", agergarComentarios);
+    //Borrar comentarios
+    document.addEventListener("click", borrarComentario);
+    //Cargar comentarios
+    document.addEventListener("DOMContentLoaded", localStorageComentariosListo);
 }
 
 // Funciones
 // Generar elementos del DOM
-function generarDom(mensaje){
-    //Crear elementos
-  const itemTarea = document.createElement('div');
-  const parrafo = document.createElement('p');
-  const textTarea = document.createTextNode(mensaje);
-  const botonBorrar = document.createElement('button');
-  const textBoton = document.createTextNode('X')
+function generarDom(post, comentario){
+    //Crear elementos post
+  const itemPost = document.createElement("div");
+  const parrafo = document.createElement("p");
+  const textPost = document.createTextNode(post);
+  const botonBorrar = document.createElement("button");
+  const textBoton = document.createTextNode("X")
 
- // Añadir atributos a elementos
-  itemTarea.setAttribute("class", "col-12")
+  //Crear elementos comentarios
+  const itemComment = document.createElement("div");
+  const commentP = document.createElement("p");
+  const textComment = document.createTextNode(comentario);
+  const borrarComment = document.createElement("button");
+  const textBtnComment = document.createTextNode("x");
+
+ // Añadir atributos a elementos del Post
+  itemPost.setAttribute("class", "col-12")
   parrafo.setAttribute("class", "d-inline-block")
   botonBorrar.setAttribute("class", "btn btn-dark");
+
+  //Añadir atributos a elementos del comentario
+  itemComment.setAttribute("class", "col-8")
+  commentP.setAttribute("class", "d-inline-block")
+  borrarComment.setAttribute("class", "btn btn-red");
  
-  // añade texto al botón
+  // añade texto al botón del post
   botonBorrar.appendChild(textBoton);
   // añade el mensaje al parrafo
-  parrafo.appendChild(textTarea);
+  parrafo.appendChild(textPost);
   // añade mensaje a la lista
-  itemTarea.appendChild(parrafo);
+  itemPost.appendChild(parrafo);
   // añade el botón de borrar al mensaje
-  itemTarea.appendChild(botonBorrar);
+  itemPost.appendChild(botonBorrar);
   // añade item con mensaje y botón a contendor padre
-  listaMensajes.appendChild(itemTarea); 
+  listaMensajes.appendChild(itemPost); 
+
+ //añade texto al boton de commentarios
+ borrarComment.appendChild(textBtnComment);
+ //añade el comenatario al parrafo
+ commentP.appendChild(textComment);
+ //añade comentarios a la lista
+ itemComment.appendChild(commentP);
+ // añade el boton de borrar comentario
+ itemComment.appendChild(borrarComment);
+ //añade item con comentarios y boton a contenedor padre
+ listaComentarios.appendChild(itemComment);
 }
 
-// añadir mensajes al documento
-function agregarComentario(){
+
+// añadir post al documento
+function agregarPublicacion(){
      // leer el valor de textarea
-    const mensajes = document.getElementById("cajaComentarios").value;
+    const mensajes = document.getElementById("cajaPost").value;
     // crear elementos en el DOM
     generarDom(mensajes)
     // añadir a Local Storage
     agregarMensajesLocalStorage(mensajes);
 }
+//Añadir comentarios al post
+function agergarComentarios(){
+    //leer el valor del textarea
+    const comentario = document.getElementById("cajaComentario").value;
+    //crea elementos en el DOM
+    generarDom(comentario)
+    //Añadir a Local Storage
+    agregarComentariosLocalStorage(comentario);
+}
 
-//eliminar mensajes del DOM
-function borrarComentario(e) {
+
+//eliminar post del DOM
+function borrarPublicacion(e) {
   if(e.target.className === "btn btn-dark"){
       e.target.parentElement.remove();
       borrarMensajesLocalStorage(e.target.parentElement.innerText);
   }
 }
+//Eliminar comentarios del DOM
+function borrarComentario(e){
+    if(e.target.className === "btn btn-red"){
+        e.target.parentElement.remove();
+        borrarComentarioLocalStorage(e.target.parentElement.innerText);
+    }
+}
+
 
 // mostrar datos de LocalStorage en la pagina
 function localStorageListo(){
-    let comentarios;
-    comentarios = obtenerMensajesLocalStorage();
-    comentarios.forEach(function(mensajes){
+    let posts;
+    posts = obtenerMensajesLocalStorage();
+    posts.forEach(function(mensajes){
         generarDom(mensajes);
     });
 }
+//Mostrar datos de LocalStorage comentarios en la pagina
+function localStorageComentariosListo(){
+    let comentarios;
+    comentarios = obtenerComentariosLocalStorage();
+    comentarios.forEach(function(comment){
+        generarDom(comment)
+    });
+} 
+
 
 // agrega mensaje a local storage
 function agregarMensajesLocalStorage(textoMsj){
     let mensajes = obtenerMensajesLocalStorage();
     // añadir mensaje al arreglo
     mensajes.push(textoMsj);
-    // convierte arreglo a sring para añadir a local storage
+    // convierte arreglo a string para añadir a local storage
     localStorage.setItem("mensajes",JSON.stringify(mensajes));
 }
+//Agrega comentarios a LocalStorage
+function agregarComentariosLocalStorage(textoCmmnt){
+    let comentario = obtenerComentariosLocalStorage();
+    //añadir comentario al arreglo
+    comentario.push(textoCmmnt);
+    //convierte arreglo a string para añadir a LocalStorage
+    localStorage.setItem("comentario", JSON.stringify(comentario));
+}
+
 
 // comprobar elementos en local storage y retorne arreglo
 function obtenerMensajesLocalStorage() {
@@ -100,20 +169,47 @@ function obtenerMensajesLocalStorage() {
    }    
    return mensaje;
 }
+//comprobar elemntos en LocalStorage y retorne arreglo
+function obtenerComentariosLocalStorage(){
+    let comentario;
+    //revisamos valores de LocalStorage
+    if(localStorage.getItem("comentario") === null){
+        comentario = [];
+    }else{
+        comentario = JSON.parse(localStorage.getItem("comentario"))
+    }
+    return comentario;
+}
+
 
 // eliminar mensajes de local storage
-function borrarMensajesLocalStorage(comments) {
+function borrarMensajesLocalStorage(posts) {
     //elimina la X del mensaje
     //la funcion recibe todo el texto del mensaje más la X y procede a cortar el texto, dejando solo el texto de la tarea, para eliminarla del localStorage
-    let borrarComments = comments.substring(0, comments.length - 1);
-    let comentario = obtenerMensajesLocalStorage();
+    let borrarPost = posts.substring(0, posts.length - 1);
+    let posteo = obtenerMensajesLocalStorage();
     //en el forEach, compara el mensaje recibido con lo existente en local storage y quita la tarea a eliminar
-    comentario.forEach(function(textoArr, index){
-        if(borrarComments === textoArr) {
-            comentario.splice(index, 1);
+    posteo.forEach(function(textoArr, index){
+        if(borrarPost === textoArr) {
+            posteo.splice(index, 1);
         }
     })
     //convierte el areglo nuevo (con la tarea eliminada) en string para volver a guardarlo en local storage
-   localStorage.setItem("mensajes", JSON.stringify(comentario)); 
+   localStorage.setItem("posteo", JSON.stringify(posteo)); 
+}
+//Eliminar comentarios LocalStorage
+function borrarComentarioLocalStorage(comments){
+    //Elimina la x del comentario
+    //la función recibe todo el texto del comentarios más la x y procede a cortar el texto, dejando solo el texto de la tarea, para eliminarla del Localstorage
+    let borrarComment = comments.substring(0, comments.length - 1);
+    let comentarios = obtenerComentariosLocalStorage();
+    //en el forEach compara el comentario recibido con lo existente en local storage y quita el comentario a eliminar
+    comentarios.forEach(function(textoArr, index){
+        if(borrarComment === textoArr){
+            comentarios.splice(index, 1);
+        }
+    })
+    //Convierte el arreglo nuevo(con el comentario eliminado) en un string para volver a guardarlo en localStorage
+    localStorage.setItem("comentarios", JSON.stringify(comentarios));
 }
 

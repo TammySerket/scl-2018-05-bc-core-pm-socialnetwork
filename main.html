@@ -90,7 +90,7 @@
 						</div>	
 						<div class="col">	
 							<form action="">	
-								<textarea name="mensaje" id="cajaComentarios" placeholder="Publicar Mensaje"></textarea>	
+								<textarea name="mensaje" id="cajaPost" placeholder="Publicar Mensaje"></textarea>	
 								<div class="contenedor-botones d-flex justify-content-between">	
 									<div class="media">	
 										<a href="#"><i class="icon-picture"></i></a>	
@@ -116,14 +116,16 @@
 							</a>	
 						</div>	
 	
-						<div class="col">	
-							<div class="post">	
-								<a href="#" class="nombre">Andrea Lorem Ipsum</a>	
+						<div id="publicacion" class="col">	
+							<div class="post">
+								<ol id="post"></ol>
+								<!--<a href="#" class="nombre">Andrea Lorem Ipsum</a> 	
 								<p id="post" class="texto"></p>	
 								<div class="caja-botones d-flex justify-content-between align-items-center">	
-									<button><i class="icon-thumbs-up"></i></button>	
+									<button><i class="icon-thumbs-up"></i></button>
+									<button id="eliminar"><i class="icon-erase">Eliminar</i></button>	
 									<p>15 <i class="icon-thumbs-up"></i></p>	
-								</div>	
+								</div>	-->
 							</div>	
 						</div>	
 					</div>	
@@ -140,7 +142,9 @@
 									</div>	
 									<div class="col">	
 										<form action="">	
-											<textarea name="" id="post" placeholder="Comentario"></textarea>	
+											<textarea name="" id="cajaComentario" placeholder="Comentario"></textarea>
+											<button id="comenta">Comenta</button>	
+	
 										</form>	
 									</div>	
 								</div>	
@@ -152,10 +156,8 @@
 										</a>	
 									</div>	
 									<div class="col">	
-										<p class="respuesta">	
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, eum.	
-										</p>	
-										<a href="#" class="me-gusta">Me gusta</a>	
+										<p id="comentarios" class="respuesta"></p>	
+										<!--<a href="#" class="me-gusta">Me gusta</a>-->	
 									</div>	
 								</div>	
 	
