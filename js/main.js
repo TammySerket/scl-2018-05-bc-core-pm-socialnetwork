@@ -37,7 +37,7 @@ function eventListeners(){
 
 // Funciones
 // Generar elementos del DOM
-function generarDom(post, comentario){
+function generarDom(post){
     //Crear elementos post
   const itemPost = document.createElement("div");
   const parrafo = document.createElement("p");
@@ -45,22 +45,12 @@ function generarDom(post, comentario){
   const botonBorrar = document.createElement("button");
   const textBoton = document.createTextNode("X") 
 
-  //Crear elementos comentarios
-  const itemComment = document.createElement("div");
-  const commentP = document.createElement("p");
-  const textComment = document.createTextNode(comentario);
-  const borrarComment = document.createElement("button");
-  const textBtnComment = document.createTextNode("x"); 
-
  // Añadir atributos a elementos del Post
   itemPost.setAttribute("class", "col-12")
   parrafo.setAttribute("class", "d-inline-block")
   botonBorrar.setAttribute("class", "btn btn-dark"); 
 
-  //Añadir atributos a elementos del comentario
-  itemComment.setAttribute("class", "col-8")
-  commentP.setAttribute("class", "d-inline-block")
-  borrarComment.setAttribute("class", "btn btn-red"); 
+   
  
   // añade texto al botón del post
   botonBorrar.appendChild(textBoton);
@@ -72,7 +62,22 @@ function generarDom(post, comentario){
   itemPost.appendChild(botonBorrar);
   // añade item con mensaje y botón a contendor padre
   listaMensajes.appendChild(itemPost); 
+}
+function generarDomComentarios(comentario){
 
+     //Crear elementos comentarios
+  const itemComment = document.createElement("div");
+  const commentP = document.createElement("p");
+  const textComment = document.createTextNode(comentario);
+  const borrarComment = document.createElement("button");
+  const textBtnComment = document.createTextNode("x"); 
+
+  //Añadir atributos a elementos del comentario
+  itemComment.setAttribute("class", "col-8")
+  commentP.setAttribute("class", "d-inline-block")
+  borrarComment.setAttribute("class", "btn btn-red");
+
+  
  //añade texto al boton de commentarios
  borrarComment.appendChild(textBtnComment);
  //añade el comenatario al parrafo
@@ -100,7 +105,7 @@ function agregarPublicacion(){
     //leer el valor del textarea
     const comentarios = document.getElementById("cajaComentario").value;
     //crea elementos en el DOM
-    generarDom(comentarios)
+    generarDomComentarios(comentarios)
     //Añadir a Local Storage
     agregarComentariosLocalStorage(comentarios);
 } 
@@ -135,7 +140,7 @@ function localStorageComentariosListo(){
     let comentarios;
     comentarios = obtenerComentariosLocalStorage();
     comentarios.forEach(function(comentario){
-        generarDom(comentario)
+        generarDomComentarios(comentario)
     });
 }  
 
