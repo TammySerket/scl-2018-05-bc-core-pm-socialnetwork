@@ -152,4 +152,11 @@ function signInWithFacebook(){
 
 }
 
- 
+//(funcionalidad boostrap&jquery)
+$(function() {
+    $('[data-toggle="popover"]').popover();
+  });
+
+  $('.popover-dismiss').popover({
+    trigger: 'focus'
+  });
