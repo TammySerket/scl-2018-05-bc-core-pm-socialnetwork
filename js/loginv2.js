@@ -1,6 +1,6 @@
 function register(){
-    let email=document.getElementById('email').value;
-    let password=document.getElementById('password').value;
+    let email=document.getElementById('email1').value;
+    let password=document.getElementById('password1').value;
     console.log(email)
     console.log(password)
 
@@ -120,7 +120,13 @@ function signInWithFacebook(){
         // The signed-in user info.
         var user = result.user;
         // ...
-        window.location.href = 'main.html';
+        firebase.database().ref('users/' + user.uid).set({
+            name: user.displayName,
+            email: user.email,
+            profilePhoto: user.photoURL,
+          }).then(user => {
+            window.location.href = 'main.html';
+          });
       }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;

@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Trabún-RedSocial</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
      <!-- conexion a Firebase -->
      <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
      <script>
@@ -24,24 +28,43 @@
 </head>
 <body>
 
-   <div class="container" style="background-color: rgba(233, 129, 190, 0.507)">
-        <h4>Registrate</h4>
-        <input type="email"  id="email" placeholder="email@ejemplo.com">
-        <input type="password"  id="password"placeholder="Ingresa Password">
-        <button onclick="register()">Registrate</button>
-    <hr>
-           <h4>Ingresa</h4>
-            <input type="email"  id="email1" placeholder="email@ejemplo.com">
-            <input type="password"  id="password1"placeholder="Ingresa Password">
-    <hr>        
-            <button onclick="signIn()">Acceder</button>
-            <button onclick="signInWithGoogle()">Acceder con Google</button>
-            <button onclick="signInWithFacebook()">Acceder con Facebook</button>
-
-    </div>
-    <div id="contenido">
-
-    </div>
+        <div class="login-form">
+                <form action="/examples/actions/confirmation.php" method="post">
+                    <div id="centrador">
+                            <img id="imagen" src="/img/logo.png">
+                    </div>
+            
+                    <h4 class="text-center">T r a b ú n </h4>		
+                    <div class="text-center social-btn">
+                        <a onclick="signInWithFacebook()" class="btn btn-primary btn-block"><i class="fa fa-facebook" ></i> Ingresa con <b>Facebook</b></a>
+                        <a onclick="signInWithGoogle()" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Ingresa con <b>Google</b></a>
+                    </div>
+                    <div class="or-seperator"><i>o ingresa con email</i></div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="email" class="form-control" id="email1" placeholder="email@ejemplo.com" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" id="password1" placeholder="Ingresa Password" required="required">
+                        </div>
+                    </div>        
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block login-btn" onclick="signIn()">Ingresa</button>
+                        <div class="or-seperator"><i>Eres nuevo por aquí?</i></div>
+                        <button onclick="register()" class="btn btn-success btn-block login-btn" >Registrate</button>
+                    </div>
+                    <div class="clearfix">
+                        <label class="pull-left checkbox-inline"><input type="checkbox"> Recuerdame</label>
+                        <a href="#" class="pull-right text-success">Olvidaste tu Contraseña?</a>
+                    </div>  
+                    
+                </form>
+               
+            </div>
     
     
   <script src="js/loginv2.js"></script>  
