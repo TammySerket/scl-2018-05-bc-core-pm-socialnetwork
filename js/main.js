@@ -1,5 +1,5 @@
-  // Deslogearse
-  function signOut(){
+ // Deslogearse
+  function signOutClose(){
     firebase.auth().signOut()
     .then(function (){
         console.log('Cerrando Sesion...')
@@ -10,13 +10,38 @@
     })
 }
 
+function observadorMain(){
+
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log ("Existe usuario activo")
+      
+    // User is signed in.
+        var name = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        console.log(emailVerified)
+        var photoURL = user.photoURL;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        console.log(user);
+        username.textContent(name);
+        userEmail.textContent(email);
+        profilePhoto.setAttribute('src', photoUrl);
+    }
+    });
+
+}
+
+observadorMain();
+
+// -----------------------------------------------
+
 //rescata elemento contenedor 
 const listaMensajes = document.getElementById("post");
 const listaComentarios = document.getElementById("comentarios");
 
 // Ejecución eventos
-eventListeners();
-
 function eventListeners(){
     //Post
     //cuando se envia el formulario
@@ -34,6 +59,7 @@ function eventListeners(){
     //Cargar comentarios
     document.addEventListener("DOMContentLoaded", localStorageComentariosListo);
 }
+eventListeners();
 
 // Funciones
 // Generar elementos del DOM
@@ -50,8 +76,6 @@ function generarDom(post){
   parrafo.setAttribute("class", "d-inline-block")
   botonBorrar.setAttribute("class", "btn btn-dark"); 
 
-   
- 
   // añade texto al botón del post
   botonBorrar.appendChild(textBoton);
   // añade el mensaje al parrafo
@@ -63,6 +87,7 @@ function generarDom(post){
   // añade item con mensaje y botón a contendor padre
   listaMensajes.appendChild(itemPost); 
 }
+
 function generarDomComentarios(comentario){
 
      //Crear elementos comentarios
