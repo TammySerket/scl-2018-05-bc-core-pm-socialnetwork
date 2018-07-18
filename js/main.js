@@ -75,17 +75,17 @@ function generarDom(post){
   // añade item con mensaje y botón a contendor padre
   listaMensajes.appendChild(itemPost); 
 
-//Se crea evento para iconos
-heart.addEventListener("click", ()=>{
-    heart.classList.toggle("red");
-});
-light.addEventListener("click", ()=>{
+   //Se crea evento para iconos
+    heart.addEventListener("click", ()=>{
+      heart.classList.toggle("red");
+    });
+    light.addEventListener("click", ()=>{
     light.classList.toggle("yellow");
-});
-lemon.addEventListener("click", ()=>{
+    });
+    lemon.addEventListener("click", ()=>{
     lemon.classList.toggle("green");
-});
-
+    });
+  
 }
 
 // Generar elementos del DOM
