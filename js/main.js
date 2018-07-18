@@ -146,21 +146,30 @@ function generarDomComentarios(comentario){
 
 // añadir post al documento
 function agregarPublicacion(){
-     // leer el valor de textarea
+    if((document.getElementById("cajaPost").value === "")) {
+        alert("no puedes dejar campos vacíos")
+      } else{
+        // leer el valor de textarea
     const posts = document.getElementById("cajaPost").value;
     // crear elementos en el DOM
     generarDom(posts)
     // añadir a Local Storage
     agregarPostsLocalStorage(posts);
+      }
+     
 } 
 //Añadir comentarios al post
- function agergarComentarios(){
+function agergarComentarios(){
+    if((document.getElementById('cajaComentario').value === '')) {
+        alert('no puedes dejar campos vacíos')
+      } else{
     //leer el valor del textarea
     const comentarios = document.getElementById("cajaComentario").value;
     //crea elementos en el DOM
     generarDomComentarios(comentarios)
     //Añadir a Local Storage
     agregarComentariosLocalStorage(comentarios);
+      }
 } 
 
 
