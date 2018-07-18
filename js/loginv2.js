@@ -20,7 +20,10 @@ firebase.initializeApp(config);
     let userEmail = document.querySelectorAll('#displayEmail');
     let profilePhoto = document.querySelectorAll('#profile-photo');
 
-function register(){
+
+
+
+function creandoCuenta(){
     let email=document.getElementById('email1').value;
     let password=document.getElementById('password1').value;
 
@@ -35,7 +38,6 @@ function register(){
     var errorCode = error.code;
     var errorMessage = error.message;
     // ...
-    console.log(errorCode)
     alert(errorMessage)
     });
 

@@ -19,7 +19,7 @@
 <body>
 
     <div class="login-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form id= "formLogin" action="/examples/actions/confirmation.php" method="post">
             <div id="centrador">
                 <img id="imagen" src="/img/logo.png">
             </div>
@@ -58,8 +58,8 @@
                 <button type="submit" class="btn btn-success btn-block login-btn" onclick="signIn()">Ingresa</button>
                 <div class="or-seperator">
                     <i>Eres nuevo por aquí?</i>
+                    <a href="registro.html" class="btn btn-success btn-block login-btn" >Registrate</a>
                 </div>
-                <button onclick="register()" class="btn btn-success btn-block login-btn">Registrate</button>
             </div>
             <div class="clearfix">
                 <label class="pull-left checkbox-inline">
