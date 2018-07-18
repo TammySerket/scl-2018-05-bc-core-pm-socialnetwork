@@ -24,6 +24,12 @@
 	firebase.initializeApp(config);
 	
 	</script>
+	<link rel="stylesheet" href="css/fontello2.css">	
+	<link rel="stylesheet" href="css/fontello.css">	
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" href="css/main.css">	
+	
+	
 </head>	
 <body>	
 	<header>	
@@ -49,10 +55,10 @@
 				</div>	
 				<nav class="col-12 col-sm-3 col-lg-2 menu d-flex justify-content-between ml-auto">	
 					<a href="#"><i class="icon-users"></i></a>	
-					<a href="#"><i class="icon-bell-alt"></i></a>	
+					<a href="#"><i class="icon-food"></i></a>	
 					<a href="#"><i class="icon-chat"></i></a>	
 					<a href="#" class="imagen"><img src="img/persona2.jpg" width="32" height="32" alt=""></a>
-					<button onclick="signOut()">Cerrar Sesión</button>	
+					<button onclick="signOutClose()">Cerrar Sesión</button>	
 				</nav>	
 			</div>	
 		</div>	
@@ -62,11 +68,11 @@
 		<div class="row">	
 			<div class="col-12 col-md-3 barra-lateral-izquierda" id="barra-lateral-izquierda">	
 				<nav>	
+					<a href="#"><i class="icon-user-o"></i>Mi Perfil</a>	
 					<a href="#"><i class="icon-users"></i> Amigos</a>	
 					<a href="#"><i class="icon-mail"></i> Mensajes Privados</a>	
-					<a href="#"><i class="icon-thumbs-up"></i> Productores</a>	
-					<a href="#"><i class="icon-play"></i> Recetas</a>	
-					<a href="#"><i class="icon-picture"></i> Imagenes</a>	
+					<a href="#"><i class=" icon-handshake-o"></i> Productores</a>	
+					<a href="#"><i class="icon-food"></i> Recetas</a>	
 					
 				</nav>	
 			</div>	
@@ -97,7 +103,6 @@
 									<div class="media">	
 										<a href="#"><i class="icon-picture"></i></a>	
 										<a href="#"><i class="icon-play"></i></a>	
-										<!-- <a href="#"><i class="icon-emo-happy"></i></a> -->	
 									</div>	
 									<div>	
 										<button id="comparte">Comparte</button>	
@@ -174,11 +179,26 @@
 		</div>	
 	</main>	
 	
+
+	<!-- conexion a Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+	<script>
+	//creando archivo común para no sobreescribir lo mismo en cada html
+	var config = {
+    apiKey: "AIzaSyAWALtnmZiS_d4KhjIc79op-M8D4KDYNLo",
+    authDomain: "trabun-socialmedia.firebaseapp.com",
+    databaseURL: "https://trabun-socialmedia.firebaseio.com",
+    projectId: "trabun-socialmedia",
+    storageBucket: "trabun-socialmedia.appspot.com",
+    messagingSenderId: "85322774721"
+	};
+	firebase.initializeApp(config);
+	</script>	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="js/menu.js"></script>	
-	<script src="js/bootstrap.min.js"></script>	
 	<script src="js/main.js"></script>
+	
 </body>	
 </html> 

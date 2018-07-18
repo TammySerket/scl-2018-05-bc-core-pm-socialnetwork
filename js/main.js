@@ -1,5 +1,5 @@
-  // Deslogearse
-  function signOut(){
+ // Deslogearse
+  function signOutClose(){
     firebase.auth().signOut()
     .then(function (){
         console.log('Cerrando Sesion...')
@@ -10,13 +10,38 @@
     })
 }
 
+function observadorMain(){
+
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log ("Existe usuario activo")
+      
+    // User is signed in.
+        var name = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        console.log(emailVerified)
+        var photoURL = user.photoURL;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        console.log(user);
+        username.textContent(name);
+        userEmail.textContent(email);
+        profilePhoto.setAttribute('src', photoUrl);
+    }
+    });
+
+}
+
+observadorMain();
+
+// -----------------------------------------------
+
 //rescata elemento contenedor 
 const listaMensajes = document.getElementById("post");
 const listaComentarios = document.getElementById("comentarios");
 
 // Ejecución eventos
-eventListeners();
-
 function eventListeners(){
     //Post
     //cuando se envia el formulario
@@ -35,6 +60,7 @@ function eventListeners(){
     document.addEventListener("DOMContentLoaded", localStorageComentariosListo);
 
 }
+eventListeners();
 
 // Funciones
 // Generar elementos del DOM
@@ -58,6 +84,7 @@ function generarDom(post){
   lemon.classList.add("far", "fa-lemon");
  
   
+
   // añade texto al botón del post
   botonBorrar.appendChild(textBoton);
   // añade el mensaje al parrafo
