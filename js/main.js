@@ -71,17 +71,17 @@ function generarDom(post){
   const textPost = document.createTextNode(post);
   const botonBorrar = document.createElement("button");
   const textBoton = document.createTextNode("X");
-  const heart = document.createElement("i"); 
-  const light = document.createElement("i");
-  const lemon = document.createElement("i");
+  const heart = document.createElement("button"); 
+  const light = document.createElement("button");
+  const lemon = document.createElement("button");
 
  // Añadir atributos a elementos del Post
   itemPost.setAttribute("class", "col-12")
   parrafo.setAttribute("class", "d-inline-block")
   botonBorrar.setAttribute("class", "btn btn-dark"); 
-  heart.classList.add("fas", "fa-hand-holding-heart");  
-  light.classList.add("far", "fa-lightbulb"); 
-  lemon.classList.add("far", "fa-lemon");
+  heart.classList.add("style", "fas", "fa-hand-holding-heart");  
+  light.classList.add("style", "far", "fa-lightbulb"); 
+  lemon.classList.add("style", "far", "fa-lemon");
  
   
 
