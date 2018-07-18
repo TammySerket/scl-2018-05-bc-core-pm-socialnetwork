@@ -79,9 +79,9 @@ function generarDom(post){
   itemPost.setAttribute("class", "col-12")
   parrafo.setAttribute("class", "d-inline-block")
   botonBorrar.setAttribute("class", "btn btn-dark"); 
-  heart.classList.add("style", "fas", "fa-hand-holding-heart");  
-  light.classList.add("style", "far", "fa-lightbulb"); 
-  lemon.classList.add("style", "far", "fa-lemon");
+  heart.classList.add("class", "fas", "fa-hand-holding-heart");  
+  light.classList.add("class", "far", "fa-lightbulb"); 
+  lemon.classList.add("class", "far", "fa-lemon");
  
   
 
@@ -103,16 +103,9 @@ function generarDom(post){
   listaMensajes.appendChild(itemPost); 
 
    //Se crea evento para iconos
-    heart.addEventListener("click", ()=>{
-      heart.classList.toggle("red");
-    });
     light.addEventListener("click", ()=>{
     light.classList.toggle("yellow");
     });
-    lemon.addEventListener("click", ()=>{
-    lemon.classList.toggle("green");
-    });
-  
 }
 
 // Generar elementos del DOM
@@ -172,6 +165,14 @@ function agergarComentarios(){
       }
 } 
 
+function agregarLikes(heart, light, lemon){
+    const heart = document.getElementsByClassName("fa-hand-holding-heart");
+    //Se crea evento para iconos
+    heart.addEventListener("click", ()=>{
+        heart.classList.toggle("red");
+        });
+
+}
 
 //eliminar post del DOM
 function borrarPublicacion(e) {

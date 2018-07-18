@@ -410,9 +410,18 @@ main footer .copyright {
 	}
 }
 
-.post{
-	list-style-image: url("https://image.flaticon.com/icons/svg/680/680949.svg");
-	list-style-position: inside;
+main .fa-hand-holding-heart{
+	-webkit-transition: width 0.4s ease-in-out;
+ transition: width 0.4s ease-in-out;
+ color: rgb(199, 16, 16);
+}
+
+main .fa-lightbulb{
+	color: rgb(202, 202, 26);
+}
+
+main .fa-lemon{
+	color: green;
 }
 
 @media screen and (max-width: 320px) {
