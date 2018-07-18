@@ -1,4 +1,15 @@
- // variables a validar y a  utilizar para validación de registro.
+// Get a reference to the database service
+let database = firebase.database();
+//funcionalidad de bootstrap con jquery
+$(function() {
+  $('[data-toggle="popover"]').popover();
+});
+
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+});
+// ------------------------------------------------------------
+// variables a validar y a  utilizar para validación de registro.
 
   let  nameInput = document.getElementById('inputNombre');
   let  validarName = false;
@@ -25,123 +36,120 @@
 //validacion Nombre
    
    nameInput.addEventListener('input', function() {
-    console.log('validando nombre');
-    if (nameInput.val().length >= 3) {
+   
+    if (nameInput.value.length >= 3) {
       validarName = true;
       validacionRegistroExitoso();
-      nameInput.popover('hide');
-      console.log('Nombre valido');
+  
     } else {
       noValidarRegistroFallido();
-      nameInput.popover('show');
+    
     }
   });
 
 //validacion Apellido
 
   lastInput.addEventListener('input', function() {
-    console.log('validando apellido');
-    if (lastInput.val().length >= 3) {
+    
+    if (lastInput.value.length >= 3) {
       validarLastName = true;
       validacionRegistroExitoso();
-      lastInput.popover('hide');
-      console.log('Apellido valido');
     } else {
       noValidarRegistroFallido();
-      lastInput.popover('show');
+     
     }
   });
 
 
 //validacion Email
   emailInput.addEventListener('input', function() {
-    console.log('escribiendo email');
+
     let patron =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     
-    if (patron.test(emailInput.val())) {
+    if (patron.test(emailInput.value)) {
       validarEmail = true;
       validacionRegistroExitoso();
-      emailInput.popover('hide');
-      console.log('Email');
+     
     } else {
       noValidarRegistroFallido();
-      emailInput.popover('show');
+      
     }
   });
 
   //validacion Contraseña
 
   passwordInput.addEventListener('input', function() {
-    console.log('escribiendo password');
+   
     let patronPass = /^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z\0-9]{6,}$/;
     
-    if (patronPass.test(passwordInput.val())) {
+    if (patronPass.test(passwordInput.value)) {
       validarPassword = true;
       validacionRegistroExitoso();
-      passwordInput.popover('hide');
-      console.log('Password');
+    
+     
     } else {
       noValidarRegistroFallido();
-      passwordInput.popover('show');
+   
     }
   });
   
   //cuando se cumplen todas las validaciones se activa la fx
+  
+  
   function register() {
-    let emailRegister = emailInput.val();
-    let passwordRegister = passwordInput.val();
-
-    // Registro de nuevos usuarios con firebase
+    let emailRegister =emailInput.value;
+    let passwordRegister =passwordInput.value;
+    let nombre=nameInput.value;
+    let apellido=lastInput.value;
+    
+    // Registro de Usuario (NUEVO) con FIREBASE
     firebase.auth().createUserWithEmailAndPassword(emailRegister,passwordRegister)
-    .then(function(){
-      verificando()
-    }).then(function(user) {
-      let username = nameInput.val() + ' ' + lastInput.val();    
-      return user.updateProfile({
-        displayName: username,
-        photoURL:'/img/user-profile.png'
-      });
-    }).catch(function(error) {
+    .then(function(user) {
+      let username = `${nombre} ${apellido}`; 
+      user = firebase.auth().currentUser;
+      user.updateProfile({
+      displayName: username,
+      photoURL: "url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png)"
+    });
+      console.log (user.displayName)
+      console.log (user.photoURL)
+  })
+  .catch(function(error) {
     // Handle Errors here.
-    let errorCode = error.code;
-    let errorMessage = error.message;
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log (error)
     // ...
-    alert(errorMessage)
-    });
-
-  function verificando(){
-    var user = firebase.auth().currentUser;
-    user.sendEmailVerification()
-    .then(function() {
-     console.log('enviando email')
-    }).catch(function(error) {
-        console.log(error)
-    });
-  }
+  });
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       firebase.database().ref('users/' + user.uid).set({
-      name: user.displayName,
-      email: user.email,
-      uid: user.uid,
-      profilePhoto: user.photoURL
-    }).then(user => {
-      window.location.href ='loginv2.html';
-    }); 
-    console.log('User is registered.');
-  } else {
-    console.log('Registration failed.');   
-  }
+        name: user.displayName,
+        email: user.email,
+        uid: user.uid,
+        profilePhoto: user.photoURL
+      }).then(user => {
+        verificando();
+        window.location.href = 'loginv2.html';
+      }); 
+      console.log('User is registered.');
+    } else {
+      console.log('Registration failed.');   
+    }
   });
+
+
+     function verificando(){
+      let user = firebase.auth().currentUser;
+      user.sendEmailVerification()
+      .then(function() {
+       console.log('enviando email')
+      }).catch(function(error) {
+        console.log(error)
+      });
+  }
+
+  
 }
 
-//funcionalidad de bootstrap con jquery
-$(function() {
-  $('[data-toggle="popover"]').popover();
-});
-
-$('.popover-dismiss').popover({
-  trigger: 'focus'
-});
-// ------------------------------------------------------------
