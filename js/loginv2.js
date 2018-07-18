@@ -23,8 +23,11 @@ firebase.initializeApp(config);
 
 // funcion para Ingresar con usuario y contraseña ya hecho el registro
 function signIn(){
-    let email1=document.getElementById('email1').value;
-    let password1=document.getElementById('password1').value;
+  if((document.getElementById("email1").value === "") || (document.getElementById("password1").value === "")) {
+    alert("no puedes dejar campos vacíos")
+  } else{
+    let email1=document.getElementById("email1").value;
+    let password1=document.getElementById("password1").value;
     
 
     firebase.auth().signInWithEmailAndPassword(email1, password1)
@@ -40,7 +43,7 @@ function signIn(){
         console.log(errorCode)
         console.log(errorMessage)
       });
-    
+    }
 }
 
 function observador(){

@@ -5,6 +5,25 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">	
 	<title>TRABúN</title>	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/fontello.css">	
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
+	<link rel="stylesheet" href="css/main.css">	
+	<!-- conexion a Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyAWALtnmZiS_d4KhjIc79op-M8D4KDYNLo",
+		authDomain: "trabun-socialmedia.firebaseapp.com",
+		databaseURL: "https://trabun-socialmedia.firebaseio.com",
+		projectId: "trabun-socialmedia",
+		storageBucket: "trabun-socialmedia.appspot.com",
+		messagingSenderId: "85322774721"
+	};
+	firebase.initializeApp(config);
+	
+	</script>
 	<link rel="stylesheet" href="css/fontello2.css">	
 	<link rel="stylesheet" href="css/fontello.css">	
 	<link rel="stylesheet" href="css/bootstrap.min.css">	
@@ -107,13 +126,6 @@
 						<div id="publicacion" class="col">	
 							<div class="post">
 								<p id="post"></p>
-								<!--<a href="#" class="nombre">Andrea Lorem Ipsum</a> 	
-								<p id="post" class="texto"></p>	
-								<div class="caja-botones d-flex justify-content-between align-items-center">	
-									<button><i class="icon-thumbs-up"></i></button>
-									<button id="eliminar"><i class="icon-erase">Eliminar</i></button>	
-									<p>15 <i class="icon-thumbs-up"></i></p>	
-								</div>	-->
 							</div>	
 						</div>	
 					</div>	
@@ -124,9 +136,7 @@
 							<div class="comentarios">	
 								<div class="row comentario no-gutters">	
 									<div class="col-auto foto">	
-										<a href="#">	
-											<img src="img/persona2.jpg" alt="">	
-										</a>	
+										<a href="#"><img src="" alt=""></a>	
 									</div>	
 									<div class="col">	
 										<form action="">	
@@ -139,137 +149,16 @@
 	
 								<div class="row comentario no-gutters ">	
 									<div class="col-auto foto">	
-										<a href="#">	
-											<img src="img/persona2.jpg" alt="">	
-										</a>	
+										<a href="#"><img src=""></a>	
 									</div>	
 									<div class="col">	
 										<p id="comentarios" class="respuesta"></p>	
-										<!--<a href="#" class="me-gusta">Me gusta</a>-->	
-									</div>	
-								</div>	
-	
-								<div class="row comentario no-gutters ">	
-									<div class="col-auto foto">	
-										<a href="#">	
-											<img src="img/persona5.jpg" alt="">	
-										</a>	
-									</div>	
-									<div class="col">	
-										<p class="respuesta">	
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque totam rem explicabo beatae tenetur iste perspiciatis culpa quam asperiores saepe!	
-										</p>	
-										<a href="#" class="me-gusta">Me gusta</a>	
-									</div>	
-								</div>	
-	
-							</div>	
-						</div>	
-					</div>	
-				</div>	
-	
-				<!-- Publicacion #2 -->	
-				<div class="publicacion">	
-					<!-- Publicacion -->	
-					<div class="row">	
-						<div class="col-auto foto">	
-							<a href="#">	
-								<img src="img/persona1.jpg" alt="">	
-							</a>	
-						</div>	
-	
-						<div class="col">	
-							<div class="post">	
-								<a href="#" class="nombre">José [Productor -Papas-]</a>	
-				
-			
-									
-										<figure class="figure">
-										<img class="img-fluid rounded" src="img/paisaje1.jpg" alt="">
-										<figcaption class="figure-caption">
-											<h5>Desde el Campo a Su Mesa </h5>	
-											<h6>4kx1000,Precio Por Saco,Despacho a Domicilio</h6>	
-											<hr>
-										</figcaption>
-									</figure>	
-								<div class="caja-botones d-flex justify-content-between align-items-center">	
-									<button><i class="icon-thumbs-up"></i></button>	
-									<p>15 <i class="icon-thumbs-up"></i></p>	
-								</div>	
-							</div>	
-						</div>	
-					</div>	
-	
-					<!-- Comentarios -->	
-					<div class="row">	
-						<div class="col-10 offset-2">	
-							<div class="comentarios">	
-								<div class="row comentario no-gutters ">	
-									<div class="col-auto foto">	
-										<a href="#">	
-											<img src="img/persona2.jpg" alt="">	
-										</a>	
-											
-									</div>	
-									<div class="col">	
-										<form action="">	
-											<textarea name="" id="" placeholder="Comentario"></textarea>	
-										</form>	
 									</div>	
 								</div>	
 							</div>	
 						</div>	
 					</div>	
-				</div>	
-	
-				<!-- Publicacion #3 -->	
-				<div class="publicacion">	
-					<!-- Publicacion -->	
-					<div class="row">	
-						<div class="col-auto foto">	
-							<a href="#">	
-								<img src="img/persona4.jpg" alt="">	
-							</a>	
-						</div>	
-	
-						<div class="col">	
-							<div class="post">	
-								<a href="#" class="nombre">Alejandro Lorem Ipsum</a>
-									<figure class="figure">
-										<img class="img-fluid rounded" src="img/paisaje2.jpg" alt="">
-										<figcaption class="figure-caption">
-											<p class="text-center">Lorem ipsum dolor sit amet.</p>
-											<hr>
-										</figcaption>
-									</figure>
-								<div class="caja-botones d-flex justify-content-between align-items-center">	
-									<button><i class="icon-thumbs-up"></i></button>	
-									<p>15 <i class="icon-thumbs-up"></i></p>	
-								</div>	
-							</div>	
-						</div>	
-					</div>	
-	
-					<!-- Comentarios -->	
-					<div class="row">	
-						<div class="col-10 offset-2">	
-							<div class="comentarios">	
-								<div class="row comentario no-gutters ">	
-									<div class="col-auto foto">	
-										<a href="#">	
-											<img src="img/persona2.jpg" alt="">	
-										</a>	
-									</div>	
-									<div class="col">	
-										<form action="">	
-											<textarea name="" id="" placeholder="Comentario"></textarea>	
-										</form>	
-									</div>	
-								</div>	
-							</div>	
-						</div>	
-					</div>	
-				</div>	
+				</div>		
 			</div>	
 	
 			<div class="col-3 barra-lateral-derecha hidden-md-down">	

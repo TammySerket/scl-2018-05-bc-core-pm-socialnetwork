@@ -58,6 +58,7 @@ function eventListeners(){
     document.addEventListener("click", borrarComentario);
     //Cargar comentarios
     document.addEventListener("DOMContentLoaded", localStorageComentariosListo);
+
 }
 eventListeners();
 
@@ -69,12 +70,20 @@ function generarDom(post){
   const parrafo = document.createElement("p");
   const textPost = document.createTextNode(post);
   const botonBorrar = document.createElement("button");
-  const textBoton = document.createTextNode("X") 
+  const textBoton = document.createTextNode("X");
+  const heart = document.createElement("button"); 
+  const light = document.createElement("button");
+  const lemon = document.createElement("button");
 
  // Añadir atributos a elementos del Post
   itemPost.setAttribute("class", "col-12")
   parrafo.setAttribute("class", "d-inline-block")
   botonBorrar.setAttribute("class", "btn btn-dark"); 
+  heart.classList.add("style", "fas", "fa-hand-holding-heart");  
+  light.classList.add("style", "far", "fa-lightbulb"); 
+  lemon.classList.add("style", "far", "fa-lemon");
+ 
+  
 
   // añade texto al botón del post
   botonBorrar.appendChild(textBoton);
@@ -84,10 +93,29 @@ function generarDom(post){
   itemPost.appendChild(parrafo);
   // añade el botón de borrar al mensaje
   itemPost.appendChild(botonBorrar);
+  //añade boton de hoja
+  itemPost.appendChild(heart);
+  //añade boton de chinita
+  itemPost.appendChild(light);
+  //añade boton de limon
+  itemPost.appendChild(lemon);
   // añade item con mensaje y botón a contendor padre
   listaMensajes.appendChild(itemPost); 
+
+   //Se crea evento para iconos
+    heart.addEventListener("click", ()=>{
+      heart.classList.toggle("red");
+    });
+    light.addEventListener("click", ()=>{
+    light.classList.toggle("yellow");
+    });
+    lemon.addEventListener("click", ()=>{
+    lemon.classList.toggle("green");
+    });
+  
 }
 
+// Generar elementos del DOM
 function generarDomComentarios(comentario){
 
      //Crear elementos comentarios
@@ -118,21 +146,30 @@ function generarDomComentarios(comentario){
 
 // añadir post al documento
 function agregarPublicacion(){
-     // leer el valor de textarea
+    if((document.getElementById("cajaPost").value === "")) {
+        alert("no puedes dejar campos vacíos")
+      } else{
+        // leer el valor de textarea
     const posts = document.getElementById("cajaPost").value;
     // crear elementos en el DOM
     generarDom(posts)
     // añadir a Local Storage
     agregarPostsLocalStorage(posts);
+      }
+     
 } 
 //Añadir comentarios al post
- function agergarComentarios(){
+function agergarComentarios(){
+    if((document.getElementById('cajaComentario').value === '')) {
+        alert('no puedes dejar campos vacíos')
+      } else{
     //leer el valor del textarea
     const comentarios = document.getElementById("cajaComentario").value;
     //crea elementos en el DOM
     generarDomComentarios(comentarios)
     //Añadir a Local Storage
     agregarComentariosLocalStorage(comentarios);
+      }
 } 
 
 
