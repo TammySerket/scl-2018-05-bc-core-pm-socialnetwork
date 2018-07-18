@@ -410,6 +410,11 @@ main footer .copyright {
 	}
 }
 
+.post{
+	list-style-image: url("https://image.flaticon.com/icons/svg/680/680949.svg");
+	list-style-position: inside;
+}
+
 @media screen and (max-width: 320px) {
 	main .contenido-principal .publicar .foto {
 		display: none;

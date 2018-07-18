@@ -33,6 +33,7 @@ function eventListeners(){
     document.addEventListener("click", borrarComentario);
     //Cargar comentarios
     document.addEventListener("DOMContentLoaded", localStorageComentariosListo);
+
 }
 
 // Funciones
@@ -43,15 +44,20 @@ function generarDom(post){
   const parrafo = document.createElement("p");
   const textPost = document.createTextNode(post);
   const botonBorrar = document.createElement("button");
-  const textBoton = document.createTextNode("X") 
+  const textBoton = document.createTextNode("X");
+  const heart = document.createElement("i"); 
+  const light = document.createElement("i");
+  const lemon = document.createElement("i");
 
  // Añadir atributos a elementos del Post
   itemPost.setAttribute("class", "col-12")
   parrafo.setAttribute("class", "d-inline-block")
   botonBorrar.setAttribute("class", "btn btn-dark"); 
-
-   
+  heart.classList.add("fas", "fa-hand-holding-heart");  
+  light.classList.add("far", "fa-lightbulb"); 
+  lemon.classList.add("far", "fa-lemon");
  
+  
   // añade texto al botón del post
   botonBorrar.appendChild(textBoton);
   // añade el mensaje al parrafo
@@ -60,9 +66,29 @@ function generarDom(post){
   itemPost.appendChild(parrafo);
   // añade el botón de borrar al mensaje
   itemPost.appendChild(botonBorrar);
+  //añade boton de hoja
+  itemPost.appendChild(heart);
+  //añade boton de chinita
+  itemPost.appendChild(light);
+  //añade boton de limon
+  itemPost.appendChild(lemon);
   // añade item con mensaje y botón a contendor padre
   listaMensajes.appendChild(itemPost); 
+
+//Se crea evento para iconos
+heart.addEventListener("click", ()=>{
+    heart.classList.toggle("red");
+});
+light.addEventListener("click", ()=>{
+    light.classList.toggle("yellow");
+});
+lemon.addEventListener("click", ()=>{
+    lemon.classList.toggle("green");
+});
+
 }
+
+// Generar elementos del DOM
 function generarDomComentarios(comentario){
 
      //Crear elementos comentarios
