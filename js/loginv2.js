@@ -9,49 +9,17 @@ var config = {
 };
 firebase.initializeApp(config);
 
-    let loginGoogle = document.querySelectorAll('#google-login');
-    let loginFb = document.querySelectorAll('#fb-login');
-    let signOut = document.querySelectorAll('#sign-out');
-    let loginEmail = document.querySelectorAll('#email-login');
-    let email = document.querySelectorAll('#email');
-    let password = document.querySelectorAll('#password');
+    // let loginGoogle = document.querySelectorAll('#google-login');
+    // let loginFb = document.querySelectorAll('#fb-login');
+    // let signOut = document.querySelectorAll('#sign-out');
+    // let loginEmail = document.querySelectorAll('#email-login');
+    // let email = document.querySelectorAll('#email');
+    // let password = document.querySelectorAll('#password');
 
-    let username = document.querySelectorAll('.displayUsername');
-    let userEmail = document.querySelectorAll('#displayEmail');
-    let profilePhoto = document.querySelectorAll('#profile-photo');
+    // let username = document.querySelectorAll('.displayUsername');
+    // let userEmail = document.querySelectorAll('#displayEmail');
+    // let profilePhoto = document.querySelectorAll('#profile-photo');
 
-
-
-
-function creandoCuenta(){
-    let email=document.getElementById('email1').value;
-    let password=document.getElementById('password1').value;
-
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(function(){
-        document.getElementById(email).val()="";
-        document.getElementById(password).val()="";
-        verificando()
-    })
-    .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-    alert(errorMessage)
-    });
-
-}
-
-function verificando(){
-    var user = firebase.auth().currentUser;
-    user.sendEmailVerification()
-    .then(function() {
-     console.log('enviando email')
-    }).catch(function(error) {
-        console.log(error)
-});
-}
 
 // funcion para Ingresar con usuario y contraseña ya hecho el registro
 function signIn(){
@@ -76,7 +44,6 @@ function signIn(){
 }
 
 function observador(){
-
     firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log ("Existe usuario activo")
@@ -84,7 +51,6 @@ function observador(){
       console.log("No existe usuario activo")
     }
     });
-
 }
 
 observador();
@@ -117,8 +83,6 @@ function signInWithGoogle(){
         // ...
         console.log (error)
       });
-     
-
 }
 
 function signInWithFacebook(){
@@ -148,8 +112,6 @@ function signInWithFacebook(){
         var credential = error.credential;
         // ...
       });
-
-
 }
 
 //(funcionalidad boostrap&jquery)

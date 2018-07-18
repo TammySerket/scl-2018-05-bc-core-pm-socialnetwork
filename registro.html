@@ -18,7 +18,7 @@
 <body>
 
     <div class="login-form">
-          <!-- Formulario de register -->
+          <!-- Formulario de registro de nuevos usuarios -->
     <main class="container">
     <form class="max400 mt-5 mx-auto text-center">
         <div id="centrador2">
@@ -28,10 +28,10 @@
         <div class="or-seperator"></div>
       <div class="form-row">
         <div class="col-6">
-          <input type="text" id="inputName" class="form-control2 " placeholder="Nombre" tabindex="0" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Aquí tu nombre." required>            
+          <input type="text" id="inputNombre" class="form-control2 " placeholder="Nombre" tabindex="0" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Aquí tu nombre." required>            
         </div>
         <div class="col-6">
-          <input type="text" id="inputLastName" class="form-control2 " placeholder="Apellido" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Aquí tu apellido." required>
+          <input type="text" id="inputApellido" class="form-control2 " placeholder="Apellido" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Aquí tu apellido." required>
         </div>
         <div class="or-seperator"></div>
       </div>
@@ -41,7 +41,7 @@
       <div class="form-group">
         <input type="password" id="inputPassword" class="form-control2 " placeholder="Contraseña" data-toggle="popover" data-placement="top" data-trigger="focus" data-content="Tu contraseña debe tener al menos 6 carácteres entre letras y números." required>
       </div>
-      <button type="button" id="reg-btn" class="btn btn-success btn-block login-btn" disabled>Crear Cuenta</button>
+      <button type="button" id="btnCrearCuenta" class="btn btn-success btn-block login-btn" onclick="register()">Crear Mi Cuenta </button>
       <div class="or-seperator">
           <i>Ya tengo una cuenta</i>
           <a href="loginv2.html" type="button" id="reg-btn" class="btn btn-success btn-block login-btn">Volver</a>
