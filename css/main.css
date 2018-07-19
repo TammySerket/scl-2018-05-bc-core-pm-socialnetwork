@@ -1,5 +1,5 @@
 body {
-	background: #E6EEE3;
+	background: #a6a9a5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
@@ -39,7 +39,7 @@ header .buscar form input[type="text"]{
 header .buscar form button {
 	width: 100%;
 	background: #e4a25d;
-	border: none;
+	border: 1px solid  #5f444f;
 	font-size: 12px;
 	padding: 0 10px;
 	height: 25px;
@@ -162,12 +162,12 @@ main .contenido-principal .publicar form .contenedor-botones a:hover {
 }
 
 main .contenido-principal .publicar form button {
-	border: 1px solid #c68745;
+	border: 1px solid  #5f444f;
 	padding: 5px 30px;
 	font-size: 14px;
 	font-family: 'Roboto', sans-serif;
-	background: linear-gradient(to bottom, #c68745 0%, #906332 100%);
-	color: #fff;
+	background: linear-gradient(to bottom, #e4a25d 0%, #e9953c 100%);
+	color: rgb(41, 35, 35);
 	border-radius: 3px;
 	cursor: pointer;
 }
@@ -333,8 +333,8 @@ main footer .copyright {
 		border: 1px solid #5f444f;
 		padding: 5px 10px;
 		font-size: 14px;
-		background: linear-gradient(to bottom, #c68745 0%, #906332 100%);
-		color: #fff;
+		background: linear-gradient(to bottom, #e4a25d 0%, #e9953c 100%);
+		color: rgb(41, 35, 35);
 		border-radius: 3px;
 		cursor: pointer;
 		margin-bottom: 20px;
@@ -342,7 +342,7 @@ main footer .copyright {
 	}
 
 	main .btn-menu:hover {
-		background: #a58576;
+		background: #c8c81f;
 		text-decoration: none;
 	}
 
@@ -392,7 +392,7 @@ main footer .copyright {
 
 	main .barra-lateral-izquierda nav a:hover {
 		color: #3d3c3c;
-		background: #fff;
+		background: #c8c81f;
 	}
 
 @media screen and (max-width: 575px) {
