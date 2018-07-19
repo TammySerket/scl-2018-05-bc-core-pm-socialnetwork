@@ -120,3 +120,8 @@ $(function() {
   $('.popover-dismiss').popover({
     trigger: 'focus'
   });
+
+
+
+//Link para tests
+  module.exports = loginv2;
