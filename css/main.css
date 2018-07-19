@@ -411,8 +411,6 @@ main footer .copyright {
 }
 
 main .fa-hand-holding-heart{
-	-webkit-transition: width 0.4s ease-in-out;
- transition: width 0.4s ease-in-out;
  color: rgb(199, 16, 16);
 }
 

@@ -58,6 +58,9 @@ function eventListeners(){
     document.addEventListener("click", borrarComentario);
     //Cargar comentarios
     document.addEventListener("DOMContentLoaded", localStorageComentariosListo);
+    
+    //Likes
+    document.addEventListener("click", agregarLikes);
 
 }
 eventListeners();
@@ -165,12 +168,13 @@ function agergarComentarios(){
       }
 } 
 
-function agregarLikes(heart, light, lemon){
-    const heart = document.getElementsByClassName("fa-hand-holding-heart");
+function agregarLikes(){ 
     //Se crea evento para iconos
-    heart.addEventListener("click", ()=>{
-        heart.classList.toggle("red");
-        });
+ const heart = document.getElementsByClassName("fa-hand-holding-heart");
+ for(let i=0; i < heart.length; i++) {
+    
+}
+
 
 }
 
