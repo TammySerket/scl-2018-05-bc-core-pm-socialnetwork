@@ -143,7 +143,8 @@ main .contenido-principal .publicar form textarea {
 	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
 	color: #565656;
-	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35)
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
+	background-color: #e9e6f5;
 }
 
 main .contenido-principal .publicar form .contenedor-botones {
@@ -269,7 +270,7 @@ main .publicacion .comentario .foto a {
 
 main .publicacion .comentario form textarea {
 	width: 100%;
-	background: #fff;
+	background-color: #e9e6f5;
 	border:1px solid #cbcbcb;
 	color: #565656;
 	padding: 8px;
@@ -325,6 +326,28 @@ main footer .copyright {
 	color: #919191;
 	margin-top: 10px;
 }
+
+button.comenta{
+border: 1px solid #5f444f;
+padding: 5px 30px;
+font-size: 14px;
+font-family: 'Roboto', sans-serif;
+background: linear-gradient(to bottom, #e4a25d 0%, #e9953c 100%);
+color: rgb(41, 35, 35);
+border-radius: 3px;
+cursor: pointer;
+}
+
+button.cierra{
+	border: 1px solid #5f444f;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+	background: linear-gradient(to bottom, #c8c81f 0%, #afaf0b 100%);
+	color: rgb(41, 35, 35);
+	border-radius: 3px;
+	cursor: pointer;
+	}
 
 /* --- --- MEDIAQUERIES --- --- */
 @media screen and (max-width: 767px) {
