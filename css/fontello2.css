@@ -89,11 +89,11 @@
 .icon-user-delete:before { content: '\e81f'; } /* '' */
 .icon-theatre:before { content: '\e83a'; } /* '' */
 .icon-mail-alt:before { content: '\f0e0'; } /* '' */
-.icon-food:before { content: '\f0f5'; } /* '' */
+.icon-food:before { content: '\f0f5';font-size: 1.5em ; color:#e8e30d; } /* '' */
 .icon-folder-open-empty:before { content: '\f115'; } /* '' */
 .icon-file-image:before { content: '\f1c5'; } /* '' */
 .icon-wechat:before { content: '\f1d7'; } /* '' */
 .icon-commenting:before { content: '\f27a'; } /* '' */
 .icon-commenting-o:before { content: '\f27b'; } /* '' */
-.icon-handshake-o:before { content: '\f2b5'; } /* '' */
-.icon-user-o:before { content: '\f2c0'; } /* '' */
+.icon-handshake-o:before { content: '\f2b5';font-size:1.5em ; color:#e8e30d; } /* '' */
+.icon-user-o:before { content: '\f2c0';font-size:1.5em ; color:#e8e30d; } /* '' */

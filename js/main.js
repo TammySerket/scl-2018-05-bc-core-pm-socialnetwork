@@ -11,11 +11,9 @@
 }
 
 function observadorMain(){
-
     firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log ("Existe usuario activo")
-      
     // User is signed in.
         var name = user.displayName;
         var email = user.email;
@@ -30,9 +28,7 @@ function observadorMain(){
         profilePhoto.setAttribute('src', photoUrl);
     }
     });
-
 }
-
 observadorMain();
 
 // -----------------------------------------------
@@ -53,7 +49,7 @@ function eventListeners(){
 
     //Comentarios
     //Cuando se envían comentarios
-    document.getElementById("comenta").addEventListener("click", agergarComentarios);
+    document.getElementById("comenta").addEventListener("click", agregarComentarios);
     //Borrar comentarios
     document.addEventListener("click", borrarComentario);
     //Cargar comentarios
@@ -86,8 +82,6 @@ function generarDom(post){
   light.classList.add("class", "far", "fa-lightbulb"); 
   lemon.classList.add("class", "far", "fa-lemon");
  
-  
-
   // añade texto al botón del post
   botonBorrar.appendChild(textBoton);
   // añade el mensaje al parrafo
@@ -113,8 +107,7 @@ function generarDom(post){
 
 // Generar elementos del DOM
 function generarDomComentarios(comentario){
-
-     //Crear elementos comentarios
+ //Crear elementos comentarios
   const itemComment = document.createElement("div");
   const commentP = document.createElement("p");
   const textComment = document.createTextNode(comentario);
@@ -155,9 +148,9 @@ function agregarPublicacion(){
      
 } 
 //Añadir comentarios al post
-function agergarComentarios(){
-    if((document.getElementById('cajaComentario').value === '')) {
-        alert('no puedes dejar campos vacíos')
+function agregarComentarios(){
+    if((document.getElementById("cajaComentario").value === "")) {
+        alert("no puedes dejar campos vacíos")
       } else{
     //leer el valor del textarea
     const comentarios = document.getElementById("cajaComentario").value;
@@ -168,14 +161,14 @@ function agergarComentarios(){
       }
 } 
 
+
 function agregarLikes(){ 
     //Se crea evento para iconos
  const heart = document.getElementsByClassName("fa-hand-holding-heart");
- for(let i=0; i < heart.length; i++) {
-    
+ for(let i=0; i = heart.onmousedown ; i++) {
+     console.log(i);
 }
-
-
+ 
 }
 
 //eliminar post del DOM

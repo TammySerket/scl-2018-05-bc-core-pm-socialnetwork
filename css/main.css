@@ -1,5 +1,5 @@
 body {
-	background: #E6EEE3;
+	background: #a6a9a5;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
@@ -11,7 +11,7 @@ a:hover {text-decoration: underline;
 
 /* --- --- HEADER --- --- */
 header {
-	background: #90B081;
+	background-image: url(/img/header.jpg);
 	padding: 10px 0;
 }
 
@@ -23,21 +23,23 @@ header .logo img {
 /* BUSCAR */
 header .buscar form input[type="text"]{
 	width: 100%;
-	background: #fff;
+	background: #443f3f;
 	border: none;
 	font-size: 12px;
 	padding: 0 10px;
 	height: 25px;
 	line-height: 25px;
 	border-radius: 3px 0 0 3px;
-	color: #6d6d6d;
+	color: #faf3f3;
 	font-family: 'Open Sans', sans-serif;
 }
 
+
+
 header .buscar form button {
 	width: 100%;
-	background: #fff;
-	border: none;
+	background: #e4a25d;
+	border: 1px solid  #5f444f;
 	font-size: 12px;
 	padding: 0 10px;
 	height: 25px;
@@ -141,7 +143,8 @@ main .contenido-principal .publicar form textarea {
 	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
 	color: #565656;
-	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35)
+	box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
+	background-color: #e9e6f5;
 }
 
 main .contenido-principal .publicar form .contenedor-botones {
@@ -160,12 +163,12 @@ main .contenido-principal .publicar form .contenedor-botones a:hover {
 }
 
 main .contenido-principal .publicar form button {
-	border: 1px solid #c68745;
+	border: 1px solid  #5f444f;
 	padding: 5px 30px;
 	font-size: 14px;
 	font-family: 'Roboto', sans-serif;
-	background: linear-gradient(to bottom, #c68745 0%, #906332 100%);
-	color: #fff;
+	background: linear-gradient(to bottom, #e4a25d 0%, #e9953c 100%);
+	color: rgb(41, 35, 35);
 	border-radius: 3px;
 	cursor: pointer;
 }
@@ -267,7 +270,7 @@ main .publicacion .comentario .foto a {
 
 main .publicacion .comentario form textarea {
 	width: 100%;
-	background: #fff;
+	background-color: #e9e6f5;
 	border:1px solid #cbcbcb;
 	color: #565656;
 	padding: 8px;
@@ -324,6 +327,28 @@ main footer .copyright {
 	margin-top: 10px;
 }
 
+button.comenta{
+border: 1px solid #5f444f;
+padding: 5px 30px;
+font-size: 14px;
+font-family: 'Roboto', sans-serif;
+background: linear-gradient(to bottom, #e4a25d 0%, #e9953c 100%);
+color: rgb(41, 35, 35);
+border-radius: 3px;
+cursor: pointer;
+}
+
+button.cierra{
+	border: 1px solid #5f444f;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+	background: linear-gradient(to bottom, #e4a25d 0%, #e9953c 100%);
+	color: rgb(41, 35, 35);
+	border-radius: 3px;
+	cursor: pointer;
+	}
+
 /* --- --- MEDIAQUERIES --- --- */
 @media screen and (max-width: 767px) {
 	main .btn-menu {
@@ -331,8 +356,8 @@ main footer .copyright {
 		border: 1px solid #5f444f;
 		padding: 5px 10px;
 		font-size: 14px;
-		background: linear-gradient(to bottom, #c68745 0%, #906332 100%);
-		color: #fff;
+		background: linear-gradient(to bottom, #e4a25d 0%, #e9953c 100%);
+		color: rgb(41, 35, 35);
 		border-radius: 3px;
 		cursor: pointer;
 		margin-bottom: 20px;
@@ -340,7 +365,7 @@ main footer .copyright {
 	}
 
 	main .btn-menu:hover {
-		background: #a58576;
+		background: #c8c81f;
 		text-decoration: none;
 	}
 
@@ -390,7 +415,7 @@ main footer .copyright {
 
 	main .barra-lateral-izquierda nav a:hover {
 		color: #3d3c3c;
-		background: #fff;
+		background: #c8c81f;
 	}
 
 @media screen and (max-width: 575px) {
