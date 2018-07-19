@@ -11,7 +11,7 @@ a:hover {text-decoration: underline;
 
 /* --- --- HEADER --- --- */
 header {
-	background: #90B081;
+	background-image: url(/img/header.jpg);
 	padding: 10px 0;
 }
 
@@ -23,20 +23,22 @@ header .logo img {
 /* BUSCAR */
 header .buscar form input[type="text"]{
 	width: 100%;
-	background: #fff;
+	background: #443f3f;
 	border: none;
 	font-size: 12px;
 	padding: 0 10px;
 	height: 25px;
 	line-height: 25px;
 	border-radius: 3px 0 0 3px;
-	color: #6d6d6d;
+	color: #faf3f3;
 	font-family: 'Open Sans', sans-serif;
 }
 
+
+
 header .buscar form button {
 	width: 100%;
-	background: #fff;
+	background: #e4a25d;
 	border: none;
 	font-size: 12px;
 	padding: 0 10px;

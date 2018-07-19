@@ -11,11 +11,9 @@
 }
 
 function observadorMain(){
-
     firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log ("Existe usuario activo")
-      
     // User is signed in.
         var name = user.displayName;
         var email = user.email;
@@ -30,9 +28,7 @@ function observadorMain(){
         profilePhoto.setAttribute('src', photoUrl);
     }
     });
-
 }
-
 observadorMain();
 
 // -----------------------------------------------
@@ -83,8 +79,6 @@ function generarDom(post){
   light.classList.add("style", "far", "fa-lightbulb"); 
   lemon.classList.add("style", "far", "fa-lemon");
  
-  
-
   // añade texto al botón del post
   botonBorrar.appendChild(textBoton);
   // añade el mensaje al parrafo
@@ -117,8 +111,7 @@ function generarDom(post){
 
 // Generar elementos del DOM
 function generarDomComentarios(comentario){
-
-     //Crear elementos comentarios
+ //Crear elementos comentarios
   const itemComment = document.createElement("div");
   const commentP = document.createElement("p");
   const textComment = document.createTextNode(comentario);
