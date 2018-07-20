@@ -16,7 +16,7 @@ También realizamos un Trello con la organización de nuestro proyecto en el cua
 agregamos información visual del benchmark y del prototipo de alta fidelidad:
 https://trello.com/b/hEuPyJNp/proyecto-3-red-social
 
-##Nombre:Trabún
+## Nombre:Trabún
 
 **De origen mapudungún significa el encuentro entre los pueblos**.
 
