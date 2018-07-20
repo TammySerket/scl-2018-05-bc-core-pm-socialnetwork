@@ -278,7 +278,3 @@ function borrarPostsLocalStorage(post) {
     localStorage.setItem("comentarios", JSON.stringify(comentarios));
 } 
 
-
-
-//Linea final que linkea los tests
-module.exports = main;

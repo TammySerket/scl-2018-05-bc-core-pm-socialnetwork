@@ -1,8 +1,8 @@
 const assert = require("assert");
-const main = require("./js/loginv2");
+const loginv2 = require("../js/loginv2");
 
-describe("main", ()=>{
-    it("Debería ser un formato de correo", ()=>{
-        assert.equal(main("string" + "@"), ".com");
+describe("loginv2", ()=>{
+    it("No debe dejar campos vacios", ()=>{
+        assert.equal(loginv2(campo1, campo2), nodejarCamposVacios);
     });
 })
