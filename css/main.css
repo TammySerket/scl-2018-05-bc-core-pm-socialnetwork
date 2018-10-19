@@ -297,10 +297,6 @@ main .barra-lateral-derecha h3 {
 	text-align: center;
 }
 
-main .barra-lateral-derecha .ads {
-	/*margin-bottom: 20px;*/
-}
-
 main .barra-lateral-derecha .ads a {
 	margin-bottom: 15px;
 	display: inline-block;
@@ -451,4 +447,5 @@ main .fa-lemon{
 	main .contenido-principal .publicar .foto {
 		display: none;
 	}
+}
 }

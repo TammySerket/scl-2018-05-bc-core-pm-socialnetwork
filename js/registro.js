@@ -92,14 +92,14 @@ function register() {
         displayName: username,
         photoURL: "url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png)"
       });
-      console.log(user.displayName)
-      console.log(user.photoURL)
+      console.log(user.displayName);
+      console.log(user.photoURL);
     })
     .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(error)
+      console.log(error);
       // ...
     });
 
@@ -112,7 +112,7 @@ function register() {
         profilePhoto: user.photoURL
       }).then(user => {
         verificando();
-        window.location.href = 'loginv2.html';
+        window.location.href = 'main.html';
       });
       console.log('User is registered.');
     } else {
@@ -124,9 +124,9 @@ function register() {
     let user = firebase.auth().currentUser;
     user.sendEmailVerification()
       .then(function () {
-        console.log('enviando email')
+        console.log('enviando email');
       }).catch(function (error) {
-        console.log(error)
+        console.log(error);
       });
   }
 }

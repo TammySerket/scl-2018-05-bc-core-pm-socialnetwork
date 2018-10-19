@@ -2,12 +2,12 @@
   function signOutClose(){
     firebase.auth().signOut()
     .then(function (){
-        console.log('Cerrando Sesion...')
-        window.location.href = 'loginv2.html';
+        console.log('Cerrando Sesion...');
+        window.location.href = 'index.html';
     })
     .catch(error=>{
-        console.log(error)
-    })
+        console.log(error);
+    });
 }
 
 function observadorMain(){
@@ -230,7 +230,7 @@ function obtenerPostLocalStorage() {
    if(localStorage.getItem("posts") === null) {
        posts = [];
    }else{
-       posts = JSON.parse(localStorage.getItem("posts"))
+       posts = JSON.parse(localStorage.getItem("posts"));
    }    
    return posts;
 } 
